@@ -18,6 +18,23 @@
   @include govuk-exports("govuk/helpers/font-face") {
     @at-root {
       /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
+      @font-face {
+        font-family: "govuk-font";
+        src: govuk-font-url("v2/light-68f0c84f0e-v2.woff2") format("woff2"),
+             govuk-font-url("v2/light-222368e53d-v2.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: fallback;
+      }
+
+      @font-face {
+        font-family: "govuk-font";
+        src: govuk-font-url("v2/bold-9561e2d007-v2.woff2") format("woff2"),
+             govuk-font-url("v2/bold-5d3836b441-v2.woff") format("woff");
+        font-weight: bold;
+        font-style: normal;
+        font-display: fallback;
+      }
 
       @font-face {
         font-family: "nta";

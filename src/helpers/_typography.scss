@@ -169,10 +169,15 @@
 /// @access public
 
 @mixin govuk-font($size, $weight: regular, $tabular: false, $line-height: false) {
+  @include govuk-typography-common;
   @if $tabular {
-    @include govuk-typography-common($font-family: $govuk-font-family-tabular);
-  } @else {
-    @include govuk-typography-common;
+    // https://github.com/alphagov/govuk_template/pull/357
+    font-feature-settings: "tnum" 1;
+
+    @supports(font-variant-numeric: tabular-nums) {
+      font-feature-settings: normal;
+      font-variant-numeric: tabular-nums;
+    }
   }
 
   @if $weight == regular {

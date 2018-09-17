@@ -8,7 +8,7 @@
 /// @type List
 /// @access public
 
-$govuk-font-family-nta: "nta", Arial, sans-serif;
+$govuk-font-family-nta: "govuk-font", Arial, sans-serif;
 
 /// List of font families to use if using the 'tabular numbers' subset of NTA
 /// (the default font 'stack' for GOV.UK)
@@ -19,4 +19,4 @@ $govuk-font-family-nta: "nta", Arial, sans-serif;
 /// @type List
 /// @access public
 
-$govuk-font-family-nta-tabular: "ntatabularnumbers", $govuk-font-family-nta;
+$govuk-font-family-nta-tabular: "noop", $govuk-font-family-nta;
