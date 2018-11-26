@@ -89,6 +89,14 @@ examples:
     serviceName: Service Name
     serviceUrl: '/components/header'
 
+- name: with single link
+  data:
+    serviceName: Service Name
+    serviceUrl: '/components/header'
+    navigation:
+      - href: '#1'
+        text: Sign in
+
 - name: with navigation
   data:
     navigation:

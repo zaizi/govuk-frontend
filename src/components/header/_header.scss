@@ -118,6 +118,15 @@
     }
   }
 
+  .govuk-header__link--single {
+    @include govuk-typography-weight-bold;
+    padding-top: 2px;
+    float: right;
+    @include govuk-media-query($from: tablet) {
+      padding-top: govuk-spacing(1);
+    }
+  }
+
   .govuk-header__link--service-name {
     display: inline-block;
     margin-bottom: govuk-spacing(2);

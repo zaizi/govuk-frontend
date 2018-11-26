@@ -62,21 +62,30 @@
     </a>
     {% endif %}
 
-    {% if params.navigation %}
-    <button type="button" role="button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-    <nav>
-      <ul id="navigation" class="govuk-header__navigation {{ params.navigationClasses if params.navigationClasses }}" aria-label="Top Level Navigation">
-        {% for item in params.navigation %}
-          {% if item.href and item.text %}
-            <li class="govuk-header__navigation-item{{ ' govuk-header__navigation-item--active' if item.active }}">
-              <a class="govuk-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-                {{ item.text }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
+
+    {% if params.navigation.length > 1 %}
+      <button type="button" role="button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation {{ params.navigationClasses if params.navigationClasses }}" aria-label="Top Level Navigation">
+          {% for item in params.navigation %}
+            {% if item.href and item.text %}
+              <li class="govuk-header__navigation-item{{ ' govuk-header__navigation-item--active' if item.active }}">
+                <a class="govuk-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                  {{ item.text }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    {% else %}
+      {% for item in params.navigation %}
+        {% if item.href and item.text %}
+        <a class="govuk-header__link govuk-header__link--single" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+          {{ item.text }}
+        </a>
+        {% endif %}
+      {% endfor %}
     {% endif %}
     </div>
     {% endif %}
