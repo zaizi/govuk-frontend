@@ -126,6 +126,7 @@
     padding-left: govuk-spacing(2);
     float: right;
     text-align: right;
+    flex: 1 1 0;
     @include govuk-media-query($from: tablet) {
       padding-top: govuk-spacing(1);
     }
@@ -135,6 +136,7 @@
     display: inline-block;
     width: 80%;
     margin-bottom: govuk-spacing(2);
+    flex: 2 1 0;
     @include govuk-font($size: 24, $weight: bold);
   }
 
@@ -154,6 +156,10 @@
     @include mq ($from: desktop) {
       width: 66.66%;
       float: left;
+
+      @supports (display: flex) {
+        display: flex;
+      }
     }
   }
 
