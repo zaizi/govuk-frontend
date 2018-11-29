@@ -91,11 +91,19 @@ examples:
 
 - name: with single link
   data:
-    serviceName: Service Name
+    serviceName: Service name
     serviceUrl: '/components/header'
     navigation:
       - href: '#1'
         text: Sign in
+
+- name: with single link and lots of content
+  data:
+    serviceName: Service name that is very very very very long and goes on forever
+    serviceUrl: '/components/header'
+    navigation:
+      - href: '#1'
+        text: Single link that is also long
 
 - name: with navigation
   data:
