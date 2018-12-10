@@ -396,7 +396,7 @@ examples:
     classes: govuk-checkboxes--small
     fieldset:
       legend:
-        text: What is your nationality?
+        text: Filter by
     items:
       - value: a
         text: a thing
