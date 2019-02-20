@@ -102,3 +102,9 @@ examples:
     name: Destructive
     text: Destructive button
     classes: govuk-button--destructive
+- name: Secondary (alt)
+  description: A button for secondary actions (alt design)
+  data:
+    name: secondary
+    text: Secondary button (alt)
+    classes: govuk-button--secondary govuk-button--secondary--alt

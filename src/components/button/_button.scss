@@ -21,6 +21,13 @@
   $govuk-destructive-button-shadow-colour: shade($govuk-destructive-button-colour, 60%);
   $govuk-destructive-button-text-colour: govuk-colour("white");
 
+  // Secondary (alt) button variables
+  $govuk-secondary-alt-button-colour: govuk-colour("white");
+  $govuk-secondary-alt-button-border-colour: $govuk-button-colour;
+  $govuk-secondary-alt-button-hover-colour: shade($govuk-secondary-alt-button-colour, 7%);
+  $govuk-secondary-alt-button-shadow-colour: $govuk-button-colour;
+  $govuk-secondary-alt-button-text-colour: $govuk-button-colour;
+
   // Because the shadow (s0) is visually 'part of' the button, we need to reduce
   // the height of the button to compensate by adjusting its padding (s1) and
   // increase the bottom margin to include it (s2).
@@ -210,6 +217,19 @@
     &:focus {
       color: $govuk-destructive-button-text-colour;
       background-color: $govuk-destructive-button-hover-colour;
+    }
+  }
+
+  .govuk-button--secondary--alt {
+    border: 2px solid $govuk-secondary-alt-button-border-colour;
+    color: $govuk-secondary-alt-button-text-colour;
+    background-color: $govuk-secondary-alt-button-colour;
+    box-shadow: 0 $button-shadow-size 0 $govuk-secondary-alt-button-shadow-colour;
+
+    &:hover,
+    &:focus {
+      color: $govuk-secondary-alt-button-text-colour;
+      background-color: $govuk-secondary-alt-button-hover-colour;
     }
   }
 
