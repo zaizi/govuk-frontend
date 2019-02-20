@@ -3,11 +3,23 @@
 @import "../../helpers/all";
 
 @include govuk-exports("govuk/component/button") {
-
-  $govuk-button-colour: #00823b;
-  $govuk-button-hover-colour: darken($govuk-button-colour, 5%);
-  $govuk-button-shadow-colour: darken($govuk-button-colour, 15%);
+  // Primary button variables
+  $govuk-button-colour: #00823b; // sass-lint:disable no-color-literals
+  $govuk-button-hover-colour: shade($govuk-button-colour, 20%);
+  $govuk-button-shadow-colour: shade($govuk-button-colour, 60%);
   $govuk-button-text-colour: govuk-colour("white");
+
+  // Secondary button variables
+  $govuk-secondary-button-colour: govuk-colour("grey-3");
+  $govuk-secondary-button-hover-colour: shade($govuk-secondary-button-colour, 10%);
+  $govuk-secondary-button-shadow-colour: shade($govuk-secondary-button-colour, 40%);
+  $govuk-secondary-button-text-colour: govuk-colour("black");
+
+  // Destructive button variables
+  $govuk-destructive-button-colour: govuk-colour("red");
+  $govuk-destructive-button-hover-colour: shade($govuk-destructive-button-colour, 20%);
+  $govuk-destructive-button-shadow-colour: shade($govuk-destructive-button-colour, 60%);
+  $govuk-destructive-button-text-colour: govuk-colour("white");
 
   // Because the shadow (s0) is visually 'part of' the button, we need to reduce
   // the height of the button to compensate by adjusting its padding (s1) and
@@ -175,6 +187,30 @@
   .govuk-button--start {
     padding-top: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
     padding-bottom: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
+  }
+
+  .govuk-button--secondary {
+    color: $govuk-secondary-button-text-colour;
+    background-color: $govuk-secondary-button-colour;
+    box-shadow: 0 $button-shadow-size 0 $govuk-secondary-button-shadow-colour;
+
+    &:hover,
+    &:focus {
+      color: $govuk-secondary-button-text-colour;
+      background-color: $govuk-secondary-button-hover-colour;
+    }
+  }
+
+  .govuk-button--destructive {
+    color: $govuk-destructive-button-text-colour;
+    background-color: $govuk-destructive-button-colour;
+    box-shadow: 0 $button-shadow-size 0 $govuk-destructive-button-shadow-colour;
+
+    &:hover,
+    &:focus {
+      color: $govuk-destructive-button-text-colour;
+      background-color: $govuk-destructive-button-hover-colour;
+    }
   }
 
 }
