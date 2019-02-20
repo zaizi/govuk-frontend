@@ -222,6 +222,7 @@
 
   .govuk-button--secondary--alt {
     border: 2px solid $govuk-secondary-alt-button-border-colour;
+    border-bottom: 1px solid;
     color: $govuk-secondary-alt-button-text-colour;
     background-color: $govuk-secondary-alt-button-colour;
     box-shadow: 0 $button-shadow-size 0 $govuk-secondary-alt-button-shadow-colour;
