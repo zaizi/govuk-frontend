@@ -90,3 +90,15 @@ examples:
     name: focus
     text: Focussed
     classes: :focus
+- name: Secondary
+  description: A button for secondary actions
+  data:
+    name: secondary
+    text: Secondary button
+    classes: govuk-button--secondary
+- name: Destructive
+  description: A button for destructive actions
+  data:
+    name: Destructive
+    text: Destructive button
+    classes: govuk-button--destructive
