@@ -1,0 +1,83 @@
+{% from "back-link/macro.njk" import govukBackLink %}
+{% from "button/macro.njk" import govukButton %}
+
+{% extends "layout.njk" %}
+
+{% block styles %}
+<style>
+  .button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .primary-buttons {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4; 
+  }
+
+  .secondary-buttons {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4; 
+  }
+
+  .destructive-buttons {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4; 
+  }
+</style>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    "href": "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Button hierarchy</h1>
+
+  <div class="button-grid">
+    
+    <div class="primary-buttons">
+      {{ govukButton({
+        "text": "Start now link button",
+        "href": "/",
+        "classes": "govuk-button--start"
+      }) }}
+
+      {{ govukButton({
+        "text": "Primary button"    
+      }) }}
+
+      {{ govukButton({
+        "text": "Primary button (alt)",
+        "classes": "govuk-button--alt"
+      }) }}
+    </div>
+
+    <div class="secondary-buttons">
+      {{ govukButton({
+        "text": "Secondary button",
+        "classes": "govuk-button--secondary"
+      }) }}
+
+      {{ govukButton({
+        "text": "Secondary button (alt)",
+        "classes": "govuk-button--secondary-alt"
+      }) }} 
+    </div>
+
+    <div class="destructive-buttons">
+      {{ govukButton({
+        "text": "Destructive button",
+        "classes": "govuk-button--destructive"
+      }) }}
+
+      {{ govukButton({
+        "text": "Destructive button (alt)",
+        "classes": "govuk-button--destructive-alt"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
