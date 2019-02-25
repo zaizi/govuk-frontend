@@ -90,21 +90,33 @@ examples:
     name: focus
     text: Focussed
     classes: :focus
+- name: Primary (alt)
+  description: A button for primary actions (where there are multiple options)
+  data:
+    name: primary
+    text: Primary button (alt)
+    classes: govuk-button govuk-button--alt    
 - name: Secondary
   description: A button for secondary actions
   data:
     name: secondary
     text: Secondary button
     classes: govuk-button--secondary
+- name: Secondary (alt)
+  description: A button for secondary actions
+  data:
+    name: secondary
+    text: Secondary button (alt)
+    classes: govuk-button--secondary govuk-button--secondary-alt
 - name: Destructive
   description: A button for destructive actions
   data:
     name: Destructive
     text: Destructive button
     classes: govuk-button--destructive
-- name: Secondary (alt)
-  description: A button for secondary actions (alt design)
+- name: Destructive (alt)
+  description: A button for destructive actions
   data:
-    name: secondary
-    text: Secondary button (alt)
-    classes: govuk-button--secondary govuk-button--secondary--alt
+    name: Destructive
+    text: Destructive button (alt)
+    classes: govuk-button--destructive govuk-button--destructive-alt
