@@ -212,6 +212,7 @@
   }
 
   .govuk-button--alt {
+    padding-bottom: 7px;
     border: 2px solid $govuk-alt-button-border-colour;
     border-bottom: 1px solid $govuk-alt-button-border-colour;
     color: $govuk-alt-button-text-colour;
@@ -242,6 +243,7 @@
   }
 
   .govuk-button--secondary-alt {
+    padding-bottom: 7px;
     border: 2px solid $govuk-secondary-alt-button-border-colour;
     border-bottom: 1px solid $govuk-secondary-alt-button-border-colour;
     color: $govuk-secondary-alt-button-text-colour;
@@ -272,6 +274,7 @@
   }
 
   .govuk-button--destructive-alt {
+    padding-bottom: 7px;
     border: 2px solid $govuk-destructive-alt-button-border-colour;
     border-bottom: 1px solid $govuk-destructive-alt-button-border-colour;
     color: $govuk-destructive-alt-button-text-colour;
