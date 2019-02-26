@@ -120,3 +120,15 @@ examples:
     name: Destructive
     text: Destructive button (alt)
     classes: govuk-button--destructive govuk-button--destructive-alt
+- name: Link
+  description: A button that looks like a link
+  data:
+    name: Link
+    text: Link button
+    classes: govuk-button--link
+- name: Destructive Link
+  description: A destructive button that looks like a link
+  data:
+    name: Link
+    text: Destructive link button
+    classes: govuk-button--destructive-link    

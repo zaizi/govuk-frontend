@@ -42,6 +42,15 @@
   $govuk-destructive-alt-button-shadow-colour: $govuk-destructive-alt-button-border-colour;
   $govuk-destructive-alt-button-text-colour: govuk-colour("red");
 
+  // Link button variables
+  $govuk-link-button-colour: transparent;
+  $govuk-link-button-hover-colour: govuk-colour("grey-3");
+  $govuk-link-button-text-colour: govuk-colour("blue");
+
+  // Destructive link button variables
+  $govuk-destructive-link-button-colour: transparent;
+  $govuk-destructive-link-button-hover-colour: govuk-colour("grey-3");
+  $govuk-destructive-link-button-text-colour: govuk-colour("red");
 
   // Because the shadow (s0) is visually 'part of' the button, we need to reduce
   // the height of the button to compensate by adjusting its padding (s1) and
@@ -289,6 +298,38 @@
 
     &:focus {
       border: 2px solid transparent;
+    }
+  }
+
+  .govuk-button--link {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    color: $govuk-link-button-text-colour;
+    background-color: $govuk-link-button-colour;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      border-top: 3px solid $govuk-link-button-hover-colour;
+      border-bottom: 3px solid $govuk-link-button-hover-colour;
+      color: $govuk-link-button-text-colour;
+      background-color: $govuk-link-button-hover-colour;
+    }
+  }
+
+  .govuk-button--destructive-link {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    color: $govuk-destructive-link-button-text-colour;
+    background-color: $govuk-destructive-link-button-colour;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      border-top: 3px solid $govuk-destructive-link-button-hover-colour;
+      border-bottom: 3px solid $govuk-destructive-link-button-hover-colour;
+      color: $govuk-destructive-link-button-text-colour;
+      background-color: $govuk-destructive-link-button-hover-colour;
     }
   }
 
