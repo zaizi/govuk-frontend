@@ -13,17 +13,22 @@
 
   .primary-buttons {
     grid-column: 1 / 2;
-    grid-row: 1 / 4; 
+    grid-row: 1 / 2; 
+  }
+
+  .primary-buttons {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5; 
   }
 
   .secondary-buttons {
     grid-column: 2 / 3;
-    grid-row: 2 / 4; 
+    grid-row: 2 / 5; 
   }
 
   .destructive-buttons {
     grid-column: 3 / 4;
-    grid-row: 2 / 4; 
+    grid-row: 2 / 5; 
   }
 </style>
 {% endblock %}
@@ -38,13 +43,15 @@
   <h1 class="govuk-heading-xl">Button hierarchy</h1>
 
   <div class="button-grid">
-    
-    <div class="primary-buttons">
+    <div class="start-button">
       {{ govukButton({
         "text": "Start now link button",
         "href": "/",
         "classes": "govuk-button--start"
       }) }}
+    </div>
+
+    <div class="primary-buttons">
 
       {{ govukButton({
         "text": "Primary button"    
@@ -54,6 +61,13 @@
         "text": "Primary button (alt)",
         "classes": "govuk-button--alt"
       }) }}
+
+      <div>
+        {{ govukButton({
+          "text": "Link button",
+          "classes": "govuk-button--link"
+        }) }}
+      </div>
     </div>
 
     <div class="secondary-buttons">
@@ -78,6 +92,12 @@
         "text": "Destructive button (alt)",
         "classes": "govuk-button--destructive-alt"
       }) }}
+      
+      {{ govukButton({
+        "text": "Destructive link button",
+        "classes": "govuk-button--destructive-link"
+      }) }}  
     </div>
+
   </div>
 {% endblock %}
