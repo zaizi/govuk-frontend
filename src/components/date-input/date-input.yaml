@@ -214,3 +214,87 @@ examples:
         name: year
         classes: govuk-input--width-2
         autocomplete: bday-year
+- name: with attributes and default template attributes
+  data:
+    id: dob-with-attributes
+    namePrefix: dob-with-attributes
+    fieldset:
+      legend:
+        text: What is your date of birth?
+    hint:
+      text: For example, 31 3 1980
+    items:
+      -
+        name: day
+        classes: govuk-input--width-2
+        autocomplete: bday-day
+        attributes:
+          data-example: value
+      -
+        name: month
+        classes: govuk-input--width-2
+        autocomplete: bday-month
+        attributes:
+          data-example: value
+      -
+        name: year
+        classes: govuk-input--width-2
+        autocomplete: bday-year
+        attributes:
+          data-example: value
+- name: with template attributes overridden
+  data:
+    id: dob-with-template-attributes-overridden
+    namePrefix: dob-with-template-attributes-overridden
+    fieldset:
+      legend:
+        text: What is your date of birth?
+    hint:
+      text: For example, 31 3 1980
+    items:
+      -
+        name: day
+        classes: govuk-input--width-2
+        autocomplete: bday-day
+        attributes:
+          data-example: value
+          pattern: [0-9]
+      -
+        name: month
+        classes: govuk-input--width-2
+        autocomplete: bday-month
+        attributes:
+          data-example: value
+          pattern: [0-9]
+      -
+        name: year
+        classes: govuk-input--width-2
+        autocomplete: bday-year
+        attributes:
+          data-example: value
+          pattern: [0-9]
+- name: with template attributes disabled
+  data:
+    id: dob-with-template-attributes-disabled
+    namePrefix: dob-with-template-attributes-disabled
+    fieldset:
+      legend:
+        text: What is your date of birth?
+    hint:
+      text: For example, 31 3 1980
+    items:
+      -
+        name: day
+        classes: govuk-input--width-2
+        autocomplete: bday-day
+        attributes:
+          data-example: value
+        disableTemplateAttributes: true
+      -
+        name: month
+        classes: govuk-input--width-2
+        autocomplete: bday-month
+      -
+        name: year
+        classes: govuk-input--width-2
+        autocomplete: bday-year

@@ -67,9 +67,11 @@
         value: item.value,
         type: "number",
         autocomplete: item.autocomplete,
-        attributes: {
+        attributes: item.attributes,
+        templateAttributes: {
           pattern: "[0-9]*"
-        }
+        },
+        disableTemplateAttributes: item.disableTemplateAttributes
       }) | indent(6) | trim }}
     </div>
   {% endfor %}
