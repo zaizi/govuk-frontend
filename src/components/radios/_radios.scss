@@ -190,51 +190,47 @@
     }
   }
 
-  .govuk-radios--small .govuk-radios__input {
-    left: -9px;
-  }
-
-  .govuk-radios--small .govuk-radios__input + .govuk-radios__label::before {
-    top: 8px;
-    left: 0;
-    width: $govuk-small-radios-size;
-    height: $govuk-small-radios-size;
-  }
-
-  .govuk-radios--small .govuk-radios__input + .govuk-radios__label::after {
-    top: 14px;
-    left: 6px;
-    width: 9px;
-    height: 3.5px;
-  }
-
-  .govuk-radios--small .govuk-radios__label {
-    margin-top: -2px;
-    padding: 13px govuk-spacing(3) 13px 0;
-    float: left;
-
-    @include govuk-media-query($from: tablet) {
-      padding: 11px govuk-spacing(3) 10px 0;
+  .govuk-radios--small {
+    .govuk-radios__item {
+      min-height: 0;
+      padding-left: 35px;
     }
 
-  }
+    .govuk-radios__input {
+      left: -9px;
+    }
 
-  .govuk-radios--small .govuk-radios__item {
-    min-height: 0;
-    padding-left: 35px;
-  }
+    .govuk-radios__label {
+      margin-top: -2px;
+      padding: 13px govuk-spacing(3) 13px 0;
+      float: left;
 
-  .govuk-radios--small .govuk-radios__input + .govuk-radios__label::after {
-    width: 10px;
-    height: 10px;
-    border-width: 1px;
-  }
+      @include govuk-media-query($from: tablet) {
+        padding: 11px govuk-spacing(3) 10px 0;
+      }
+    }
 
-  .govuk-radios--small .govuk-radios__item:hover > .govuk-radios__label::before {
-    box-shadow: 0 0 0 10px govuk-colour("grey-3");
-  }
+    .govuk-radios__label::before {
+      top: 8px;
+      left: 0;
+      width: $govuk-small-radios-size;
+      height: $govuk-small-radios-size;
+    }
 
-  .govuk-radios--small .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-    box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour, 0 0 0 10px govuk-colour("grey-3");
+    .govuk-radios__label::after {
+      top: 14px;
+      left: 6px;
+      width: 10px;
+      height: 10px;
+      border-width: 1px;
+    }
+
+    .govuk-radios__item:hover > .govuk-radios__label::before {
+      box-shadow: 0 0 0 10px govuk-colour("grey-3");
+    }
+
+    .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
+      box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour, 0 0 0 10px govuk-colour("grey-3");
+    }
   }
 }
