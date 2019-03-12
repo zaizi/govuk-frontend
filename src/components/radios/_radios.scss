@@ -191,15 +191,38 @@
   }
 
   .govuk-radios--small {
+
+    $input-size-with-borders: $govuk-small-radios-size + ($govuk-border-width-form-element * 2);
+    $input-offset: ($govuk-touch-target-size - $input-size-with-borders) / 2;
+
+    $label-offset: $input-size-with-borders + $input-offset;
+
     .govuk-radios__item {
+      @include govuk-clearfix;
       min-height: 0;
-      padding-left: 35px;
+      margin-bottom: 0;
+      padding-left: $label-offset;
+      float: left;
     }
 
+    // Shift the touch target into the left margin so that the visible edge of
+    // the control is aligned
+    //
+    //   ┆Which colour is your favourite?
+    //  ┌┆───┐
+    //  │┆() │ Purple
+    //  └┆▲──┘
+    //  ▲┆└─ Radio pseudo element, aligned with margin
+    //  └─── Touch target (invisible input), shifted into the margin
     .govuk-radios__input {
-      left: -9px;
+      left: $input-offset * -1;
     }
 
+    // Adjust the size and position of the label.
+    //
+    // Unlike larger radios, we also have to float the label in order to
+    // 'shrink' it, preventing the hover state from kicking in across the full
+    // width of the parent element.
     .govuk-radios__label {
       margin-top: -2px;
       padding: 13px govuk-spacing(3) 13px 0;
@@ -210,13 +233,19 @@
       }
     }
 
+    // ( ) Radio ring
+    //
+    // Reduce the size of the control [1], vertically centering it within the
+    // touch target [2]
     .govuk-radios__label::before {
-      top: 8px;
-      left: 0;
-      width: $govuk-small-radios-size;
-      height: $govuk-small-radios-size;
+      top: $input-offset; // 2
+      width: $govuk-small-radios-size; // 1
+      height: $govuk-small-radios-size; // 1
     }
 
+    //  •  Radio button
+    //
+    // Reduce the size of the 'button' and center it within the ring
     .govuk-radios__label::after {
       top: 14px;
       left: 6px;
@@ -225,12 +254,46 @@
       border-width: 1px;
     }
 
-    .govuk-radios__item:hover > .govuk-radios__label::before {
-      box-shadow: 0 0 0 10px govuk-colour("grey-3");
+    // Fix position of hint with small radios
+    //
+    // Do not use hints with small radios – because they're within the input
+    // wrapper they trigger the hover state, but clicking them doesn't actually
+    // activate the control.
+    //
+    // (If you do use them, they won't look completely broken... but seriously,
+    // don't use them)
+    .govuk-radios__hint {
+      padding: 0;
+      clear: both;
     }
 
+    // Align conditional reveals with small radios
+    .govuk-radios__conditional {
+      $margin-left: ($govuk-small-radios-size / 2) - ($conditional-border-width / 2);
+      margin-left: $margin-left;
+      padding-left: $label-offset - ($margin-left + $conditional-border-width);
+      clear: both;
+    }
+
+    // Hover state for small radios.
+    //
+    // We use a hover state for small radios because the touch target size
+    // is so much larger than their visible size, and so we need to provide
+    // feedback to the user as to which radio they will select when their
+    // cursor is outside of the visible area.
+    .govuk-radios__item:hover .govuk-radios__input:not(:disabled) + .govuk-radios__label::before {
+      box-shadow: 0 0 0 $govuk-hover-width $govuk-hover-colour;
+    }
+
+    // Because we've overridden the border-shadow provided by the focus state,
+    // we need to redefine that too.
+    //
+    // We use two box shadows, one that restores the original focus state [1]
+    // and another that then applies the hover state [2].
     .govuk-radios__item:hover .govuk-radios__input:focus + .govuk-radios__label::before {
-      box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour, 0 0 0 10px govuk-colour("grey-3");
+      // sass-lint:disable indentation
+      box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour,
+                  0 0 0 $govuk-hover-width        $govuk-hover-colour; // [2]
     }
   }
 }
