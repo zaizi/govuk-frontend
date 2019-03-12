@@ -21,13 +21,12 @@
     @include govuk-font($size: 19);
 
     display: block;
-
     position: relative;
 
     min-height: $govuk-radios-size;
 
     margin-bottom: govuk-spacing(2);
-    padding: 0 0 0 $govuk-radios-size;
+    padding-left: $govuk-radios-size;
 
     clear: left;
   }
@@ -51,7 +50,8 @@
 
     cursor: pointer;
 
-    // IE8 doesn’t support pseudoelements, so we don’t want to hide native elements there. Double colons get ommited by IE8.
+    // IE8 doesn’t support pseudo-elements, so we don’t want to hide native
+    // elements there.
     @include govuk-not-ie8 {
       margin: 0;
       opacity: 0;
@@ -75,13 +75,8 @@
     touch-action: manipulation;
   }
 
-  .govuk-radios__hint {
-    display: block;
-    padding-right: $govuk-radios-label-padding-left-right;
-    padding-left: $govuk-radios-label-padding-left-right;
-  }
-
-  .govuk-radios__input + .govuk-radios__label::before {
+  // ( ) Radio ring
+  .govuk-radios__label::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -96,7 +91,8 @@
     background: transparent;
   }
 
-  .govuk-radios__input + .govuk-radios__label::after {
+  //  •  Radio button
+  .govuk-radios__label::after {
     content: "";
 
     position: absolute;
@@ -112,10 +108,16 @@
     background: currentColor;
   }
 
+  .govuk-radios__hint {
+    display: block;
+    padding-right: $govuk-radios-label-padding-left-right;
+    padding-left: $govuk-radios-label-padding-left-right;
+  }
+
   // Focused state
   .govuk-radios__input:focus + .govuk-radios__label::before {
-    // Since box-shadows are removed when users customise their colours
-    // We set a transparent outline that is shown instead.
+    // Since box-shadows are removed when users customise their colours we set a
+    // transparent outline that is shown instead.
     // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
     outline: $govuk-focus-width solid transparent;
     outline-offset: $govuk-focus-width;
@@ -137,7 +139,10 @@
     opacity: .5;
   }
 
-  // Inline variant
+  // =========================================================
+  // Inline radios
+  // =========================================================
+
   .govuk-radios--inline {
     @include mq ($from: tablet) {
       @include govuk-clearfix;
@@ -157,6 +162,10 @@
       }
     }
   }
+
+  // =========================================================
+  // Dividers ('or')
+  // =========================================================
 
   .govuk-radios__divider {
     $govuk-divider-size: $govuk-radios-size !default;
