@@ -174,7 +174,7 @@
   .govuk-checkboxes--small {
 
     $input-offset: ($govuk-touch-target-size - $govuk-small-checkboxes-size) / 2;
-    $label-offset: $govuk-touch-target-size - 10px;
+    $label-offset: $govuk-touch-target-size - $input-offset;
 
     .govuk-checkboxes__item {
       @include govuk-clearfix;
