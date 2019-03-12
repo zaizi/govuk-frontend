@@ -173,10 +173,8 @@
 
   .govuk-checkboxes--small {
 
-    $input-size-with-borders: $govuk-small-checkboxes-size + ($govuk-border-width-form-element * 2);
-    $input-offset: ($govuk-touch-target-size - $input-size-with-borders) / 2;
-
-    $label-offset: $input-size-with-borders + $input-offset;
+    $input-offset: ($govuk-touch-target-size - $govuk-small-checkboxes-size) / 2;
+    $label-offset: $govuk-touch-target-size - 10px;
 
     .govuk-checkboxes__item {
       @include govuk-clearfix;
@@ -206,11 +204,11 @@
     // width of the parent element.
     .govuk-checkboxes__label {
       margin-top: -2px;
-      padding: 13px govuk-spacing(3) 13px 0;
+      padding: 13px govuk-spacing(3) 13px 1px;
       float: left;
 
       @include govuk-media-query($from: tablet) {
-        padding: 11px govuk-spacing(3) 10px 0;
+        padding: 11px govuk-spacing(3) 10px 1px;
       }
     }
 
@@ -219,7 +217,7 @@
     // Reduce the size of the check box [1], vertically center it within the
     // touch target [2]
     .govuk-checkboxes__label::before {
-      top: $input-offset; // 2
+      top: $input-offset - $govuk-border-width-form-element; // 2
       width: $govuk-small-checkboxes-size; // 1
       height: $govuk-small-checkboxes-size; // 1
     }
