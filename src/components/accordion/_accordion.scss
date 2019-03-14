@@ -102,9 +102,8 @@
 
     // Setting focus styles on header so that summary that is not part of the button is included in focus
     .govuk-accordion__section-header--focused {
-      // These replicate @mixin govuk-focusable (the mixin can't be used as the header doesn't get the focus)
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-      outline-offset: 0;
+      outline: $govuk-focus-width $govuk-focus-style $govuk-link-colour;
+      outline-offset: $govuk-focus-offset;
     }
 
     // Buttons within the headers don’t need default styling

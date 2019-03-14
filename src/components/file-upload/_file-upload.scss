@@ -11,9 +11,17 @@
     @include govuk-font($size: 19);
     @include govuk-text-colour;
     @include govuk-focusable;
+
+    &:focus {
+      outline-offset: $govuk-focus-offset + 1px;
+    }
   }
 
   .govuk-file-upload--error {
     border: $govuk-border-width-form-element-error solid $govuk-error-colour;
+
+    &:focus {
+      outline-color: $govuk-error-colour;
+    }
   }
 }

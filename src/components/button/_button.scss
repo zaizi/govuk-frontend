@@ -25,11 +25,12 @@
     margin-top: 0;
     @include govuk-responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
     padding: (govuk-spacing(2) - $govuk-border-width-form-element - ($button-shadow-size / 2)) govuk-spacing(2); // s1
-    border: $govuk-border-width-form-element solid transparent;
+    padding-bottom: 5px;
+    border: 0;
+    border-bottom: $button-shadow-size solid $govuk-button-shadow-colour; // s0
     border-radius: 0;
     color: $govuk-button-text-colour;
     background-color: $govuk-button-colour;
-    box-shadow: 0 $button-shadow-size 0 $govuk-button-shadow-colour; // s0
     text-align: center;
     vertical-align: top;
     cursor: pointer;
@@ -52,17 +53,6 @@
       text-decoration: none;
     }
 
-    // alphagov/govuk_template includes a specific a:link:focus selector
-    // designed to make unvisited links a slightly darker blue when focussed, so
-    // we need to override the text colour for that combination of selectors so
-    // so that unvisited links styled as buttons do not end up with dark blue
-    // text when focussed.
-    @include govuk-compatibility(govuk_template) {
-      &:link:focus {
-        color: $govuk-button-text-colour;
-      }
-    }
-
     // Fix unwanted button padding in Firefox
     &::-moz-focus-inner {
       padding: 0;
@@ -72,6 +62,12 @@
     &:hover,
     &:focus {
       background-color: $govuk-button-hover-colour;
+    }
+
+    &:focus {
+      outline: $govuk-focus-width $govuk-focus-style;
+      outline-color: $govuk-button-hover-colour;
+      outline-offset: $govuk-focus-offset;
     }
 
     &:active {

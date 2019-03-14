@@ -68,6 +68,9 @@ $govuk-secondary-text-colour: govuk-colour("grey-1") !default;
 
 $govuk-focus-colour: govuk-colour("yellow") !default;
 
+$govuk-focus-style: dotted;
+$govuk-focus-offset: 4px;
+
 /// Focused text colour
 ///
 /// Ensure that the contrast between the text and background colour passes

@@ -28,5 +28,9 @@
 
   .govuk-textarea--error {
     border: $govuk-border-width-form-element-error solid $govuk-error-colour;
+
+    &:focus {
+      outline-color: $govuk-error-colour;
+    }
   }
 }

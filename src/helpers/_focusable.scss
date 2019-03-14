@@ -12,8 +12,8 @@
 
 @mixin govuk-focusable {
   &:focus {
-    outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 0;
+    outline: $govuk-focus-width $govuk-focus-style;
+    outline-offset: $govuk-focus-offset;
   }
 }
 
@@ -27,8 +27,8 @@
 
 @mixin govuk-focusable-fill {
   &:focus {
-    outline: $govuk-focus-width solid $govuk-focus-colour;
-    outline-offset: 0;
-    background-color: $govuk-focus-colour;
+    outline: $govuk-focus-width $govuk-focus-style;
+    outline-offset: $govuk-focus-offset;
+    // background-color: $govuk-focus-colour;
   }
 }

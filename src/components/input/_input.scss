@@ -38,6 +38,10 @@
 
   .govuk-input--error {
     border: $govuk-border-width-form-element-error solid $govuk-error-colour;
+
+    &:focus {
+      outline-color: $govuk-error-colour;
+    }
   }
 
   // The ex measurements are based on the number of W's that can fit inside the input

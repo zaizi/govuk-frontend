@@ -17,6 +17,11 @@
     @include govuk-media-query($from: tablet) {
       border: $govuk-border-width solid $govuk-error-colour;
     }
+
+    &:focus {
+      outline-color: $govuk-error-colour !important;
+      outline-offset: $govuk-focus-offset + 1px;
+    }
   }
 
   .govuk-error-summary__title {
@@ -51,21 +56,6 @@
     &:hover,
     &:active {
       color: $govuk-error-colour;
-    }
-
-    // When focussed, the text colour needs to be darker to ensure that colour
-    // contrast is still acceptable
-    &:focus {
-      color: $govuk-focus-text-colour;
-    }
-
-    // alphagov/govuk_template includes a specific a:link:focus selector
-    // designed to make unvisited links a slightly darker blue when focussed, so
-    // we need to override the text colour for that combination of selectors.
-    @include govuk-compatibility(govuk_template) {
-      &:link:focus {
-        color: $govuk-error-colour;
-      }
     }
   }
 

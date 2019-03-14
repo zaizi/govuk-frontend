@@ -112,9 +112,8 @@
     // Since box-shadows are removed when users customise their colours
     // We set a transparent outline that is shown instead.
     // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
-    outline: $govuk-focus-width solid transparent;
-    outline-offset: $govuk-focus-width;
-    box-shadow: 0 0 0 $govuk-radios-focus-width $govuk-focus-colour;
+    outline: $govuk-focus-width $govuk-focus-style;
+    outline-offset: $govuk-focus-offset;
   }
 
   // Selected state
