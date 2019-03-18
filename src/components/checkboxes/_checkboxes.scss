@@ -38,7 +38,8 @@
 
     cursor: pointer;
 
-    // IE8 doesn’t support pseudo-elements, so we don’t want to hide native elements there.
+    // IE8 doesn’t support pseudo-elements, so we don’t want to hide native
+    // elements there.
     @include govuk-not-ie8 {
       position: absolute;
 
@@ -121,8 +122,8 @@
 
   // Focused state
   .govuk-checkboxes__input:focus + .govuk-checkboxes__label::before {
-    // Since box-shadows are removed when users customise their colours
-    // We set a transparent outline that is shown instead.
+    // Since box-shadows are removed when users customise their colours, we set
+    // a transparent outline that is shown instead.
     // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
     outline: $govuk-focus-width solid transparent;
     outline-offset: $govuk-focus-width;
